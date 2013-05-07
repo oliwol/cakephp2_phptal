@@ -7,13 +7,8 @@
  * Licensed under The MIT License
  * Redistributions of files must retain the above copyright notice.
  *
- * @filesource
  * @copyright       Copyright (c) 2012, Oliver Wolschke
- * @link            
- * @package         cake
- * @subpackage      cake.app.views
  * @version         0.1
- * @lastmodified    $Date: 2012-01-04 20:46:45 +0100 $
  * @license         http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 App::import('Vendor','Phptal',array('file' => 'PHPTAL-1.2.2/PHPTAL.php'));
