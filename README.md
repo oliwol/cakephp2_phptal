@@ -1,2 +1,3 @@
-cakephp2_phptal
-===============
+Cakephp 2 with PHPTAL View
+==========================
+
