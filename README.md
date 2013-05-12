@@ -1,3 +1,2 @@
-Cakephp 2 with PHPTAL View
+Cakephp 2 mit PHPTAL View
 ==========================
-
