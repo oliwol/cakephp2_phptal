@@ -1,7 +1,7 @@
 Cakephp 2 mit PHPTAL View
 ==========================
 
-Lade die PHPTAL als Submodul in /var/www/yourapp/lib/Phptal
+Lade PHPTAL als Submodul in /var/www/yourapp/lib/Phptal
 ```bash
 cd /var/www/yourapp
 git submodule add git://github.com/pornel/PHPTAL.git lib/Phptal
