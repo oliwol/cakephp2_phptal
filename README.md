@@ -21,7 +21,7 @@ App::import('Vendor','Phptal',array('file' => '../../lib/Phptal/classes/PHPTAL.p
 App::import('Vendor','Cake2Phptal',array('file' => '../../lib/Cakephp2Phptal/PhptalView.php'));
 ```
 
-In /var/www/yourapp/app/Controller/AppController.php definierst du die neue View-KLasse im beforeFilter
+In /var/www/yourapp/app/Controller/AppController.php definierst du die neue View-Klasse im beforeFilter
 
 ```php
 function beforeFilter()
