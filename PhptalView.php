@@ -11,7 +11,6 @@
  * @version         0.1
  * @license         http://www.opensource.org/licenses/mit-license.php The MIT License
  */
-App::import('Vendor','Phptal',array('file' => 'PHPTAL-1.2.2/PHPTAL.php'));
 
 class PhptalView extends View {
 
