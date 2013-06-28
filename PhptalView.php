@@ -20,8 +20,8 @@
  */
 App::import('Vendor', 'Phptal', array('file' => 'PHPTAL/classes/PHPTAL.php'));
 
-class PhptalView extends View {
-
+class PhptalView extends View
+{
     /**
      * PHPTALView constructor
      *
@@ -44,43 +44,34 @@ class PhptalView extends View {
      * @return string Rendered output
      * @access protected
      */
-    function _render($___viewFn,$___dataForView = array())
+    function _render($___viewFn, $___dataForView = array())
     {
         $this->template->setTemplate($___viewFn);
 
-        if(empty($___dataForView))
-        {
+        if(empty($___dataForView)) {
             $___dataForView = $this->viewVars;
         }
 
-        foreach($___dataForView as $data => $value)
-        {
-            $this->template->set($data,$value);
+        foreach($___dataForView as $data => $value) {
+            $this->template->set($data, $value);
         }
 
-        if($this->helpers != false)
-        {
+        if($this->helpers != false) {
             $helpers = HelperCollection::normalizeObjectArray($this->helpers);
-            foreach($helpers as $name => $properties)
-            {
+            foreach($helpers as $name => $properties) {
                 list($plugin, $class) = pluginSplit($properties['class']);
                 $replace = strtolower(substr($class, 0, 1));
-                if(!array_key_exists($class, $___dataForView))
-                {
-                    $camelBackedHelper = preg_replace('/\\w/',$replace,$class,1);
-                    $this->template->set($camelBackedHelper,$this->{$class});
+                if(!array_key_exists($class, $___dataForView)) {
+                    $camelBackedHelper = preg_replace('/\\w/', $replace, $class, 1);
+                    $this->template->set($camelBackedHelper, $this->{$class});
                 }
             }
         }
 
-        try
-        {
+        try {
             return $this->template->execute();
-        }
-        catch(Exception $e)
-        {
+        } catch(Exception $e) {
             return "<pre>".$e->__toString()."</pre>";
         }
     }
-
 }
