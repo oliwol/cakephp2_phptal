@@ -12,6 +12,14 @@
  * @license         http://www.opensource.org/licenses/mit-license.php The MIT License
  */
 
+/**
+ * Load PHPTal first
+ * 
+ * Loading vendors usually means you are loading packages that do not follow conventions.
+ * For most vendor packages using App::import() is recommended.
+ */
+App::import('Vendor', 'Phptal', array('file' => 'PHPTAL/classes/PHPTAL.php'));
+
 class PhptalView extends View {
 
     /**
