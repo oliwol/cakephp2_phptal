@@ -48,30 +48,38 @@ class PhptalView extends View
     {
         $this->template->setTemplate($___viewFn);
 
-        if(empty($___dataForView)) {
+        if(empty($___dataForView))
+        {
             $___dataForView = $this->viewVars;
         }
 
-        foreach($___dataForView as $data => $value) {
+        foreach($___dataForView as $data => $value)
+        {
             $this->template->set($data, $value);
         }
 
-        if($this->helpers != false) {
+        if($this->helpers != false)
+        {
             $helpers = HelperCollection::normalizeObjectArray($this->helpers);
-            foreach($helpers as $name => $properties) {
+            foreach($helpers as $name => $properties)
+            {
                 list($plugin, $class) = pluginSplit($properties['class']);
                 $replace = strtolower(substr($class, 0, 1));
-                if(!array_key_exists($class, $___dataForView)) {
+                if(!array_key_exists($class, $___dataForView))
+                {
                     $camelBackedHelper = preg_replace('/\\w/', $replace, $class, 1);
                     $this->template->set($camelBackedHelper, $this->{$class});
                 }
             }
         }
 
-        try {
+        try
+        {
             return $this->template->execute();
-        } catch(Exception $e) {
-            return "<pre>".$e->__toString()."</pre>";
+        }
+        catch(Exception $e)
+        {
+            return Configure::read('debug') > 0 ? "<pre>".$e->__toString()."</pre>" : __('Doh, an error in the template. I will respond immediately.');
         }
     }
 }
